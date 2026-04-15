@@ -17,10 +17,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Clean disk
-        run: |
-          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
-          sudo apt-get clean
+      - name: Maximize disk space
+        uses: easimon/maximize-build-space@master
+        with:
+          swap-size-mb: 4096
+          root-reserve-mb: 2048
           
       - name: Install deps
         run: |
