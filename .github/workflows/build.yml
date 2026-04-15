@@ -34,16 +34,19 @@ jobs:
           rm -f feeds.conf.default
           printf 'src-git base https://github.com/immortalwrt/immortalwrt.git;openwrt-24.10\nsrc-git luci https://github.com/immortalwrt/luci.git;openwrt-24.10\nsrc-git routing https://github.com/openwrt/routing.git;openwrt-24.10\nsrc-git telephony https://github.com/openwrt/telephony.git;openwrt-24.10\nsrc-git packages https://github.com/immortalwrt/packages.git;openwrt-24.10\nsrc-git istore https://github.com/linkease/istore;main\nsrc-git netwizard https://github.com/sirpdboy/luci-app-netwizard;main\n' > feeds.conf.default
           ./scripts/feeds update -a
+          ls -la feeds/
           
       - name: Install feeds
         run: |
           cd openwrt
           ./scripts/feeds install -a
+          ls -la package/feeds/
           
       - name: Load custom configuration
         run: |
           cd openwrt
           cp $GITHUB_WORKSPACE/.config .config
+          cat .config | head -20
           
       - name: Download packages
         run: |
