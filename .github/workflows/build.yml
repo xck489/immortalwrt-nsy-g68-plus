@@ -34,18 +34,12 @@ jobs:
           cp ../configs/g68_mtk_wifi.config .config
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          make defconfig 2>&1 | tee /tmp/defconfig.log
-          head -50 /tmp/defconfig.log
+          make defconfig
+          make download -j8
+          make -j$(nproc) world
           
       - uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: openwrt/bin/targets/rockchip/armv8/*.img.gz
-          retention-days: 7
-          
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: build-logs
-          path: /tmp/defconfig.log
           retention-days: 7
