@@ -1,0 +1,4 @@
+name: Test Build Trigger
+on:
+  push:
+    branches: [main]
