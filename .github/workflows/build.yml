@@ -36,9 +36,11 @@ jobs:
           sudo apt-get install -y build-essential flex bison gperf texinfo libncurses-dev python3 libncurses5-dev libssl-dev gettext zlib1g-dev file wget git curl unzip gawk diffutils xz-utils bc automake cmake ccache libtool autoconf m4 python3-pip
           df -h
         
-      - name: Clone source code
+      - name: Clone source code and copy config
         run: |
           git clone --depth=1 $REPO_URL -b $REPO_BRANCH openwrt
+          cp configs/g68_mtk_wifi.config openwrt/.config
+          ls -la openwrt/.config
           df -h
           
       - name: Install feeds
@@ -46,11 +48,6 @@ jobs:
           cd openwrt
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          
-      - name: Load custom configuration
-        run: |
-          cd openwrt
-          cp ../configs/g68_mtk_wifi.config .config
           
       - name: Download packages
         run: |
