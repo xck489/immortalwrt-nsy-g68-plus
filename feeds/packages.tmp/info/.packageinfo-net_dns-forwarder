@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/dns-forwarder/Makefile
+
+Package: dns-forwarder
+Submenu: IP Addresses and Names
+Version: 1.2.1-r2
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Forwarding DNS queries on TCP transport
+Maintainer: Jian Chang <aa65535@live.com>
+Source: dns-forwarder-1.2.1.tar.zst
+License: GPL-3.0
+LicenseFiles: LICENSE
+URL: https://github.com/aa65535/hev-dns-forwarder
+Type: ipkg
+Description: Forwarding DNS queries on TCP transport
+@@
+
+

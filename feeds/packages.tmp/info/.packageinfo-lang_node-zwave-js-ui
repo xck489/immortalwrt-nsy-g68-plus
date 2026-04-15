@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-zwave-js-ui/Makefile
+Build-Depends: node/host node-clean-modules/host
+
+Package: node-zwave-js-ui
+Submenu: Node.js
+Version: 11.15.1-r1
+Depends: +libc +node +node-bufferutil +node-utf-8-validate
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Z-Wave control panel UI and MQTT gateway
+Maintainer: David Woodhouse <dwmw2@infradead.org>
+Source: zwave-js-ui-11.15.1.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/zwave-js-ui
+Type: ipkg
+Description:  Z-Wave control panel UI and MQTT gateway
+@@
+
+

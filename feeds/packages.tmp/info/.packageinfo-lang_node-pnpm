@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/lang/node-pnpm/Makefile
+Build-Depends: node/host
+Build-Depends/host: node/host
+Build-Types: host
+
+Package: node-pnpm
+Submenu: Node.js
+Version: 10.33.0-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Fast, disk space efficient package manager
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: pnpm-10.33.0.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://pnpm.io/
+Type: ipkg
+Description:  Fast, disk space efficient package manager
+@@
+
+

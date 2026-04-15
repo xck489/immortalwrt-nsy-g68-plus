@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/net/msd_lite/Makefile
+
+Package: msd_lite
+Version: 2025.05.02~79a6c62c8fced6128a5e445ee110709b3b51bb78-r3
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Program for IP TV streaming on the network via HTTP
+Maintainer: Tianling Shen <cnsztl@immrotalwrt.org>
+Source: msd_lite-2025.05.02~79a6c62c8fced6128a5e445ee110709b3b51bb78.tar.zst
+License: BSD-2-Clause
+LicenseFiles: LICENSE
+URL: http://www.netlab.linkpc.net/wiki/ru:software:msd:lite
+Type: ipkg
+Description:   msd_lite - Multi stream daemon lite. The lightweight version of
+  Multi Stream daemon (msd) Program for organizing IP TV streaming
+  on the network via HTTP.
+@@
+
+

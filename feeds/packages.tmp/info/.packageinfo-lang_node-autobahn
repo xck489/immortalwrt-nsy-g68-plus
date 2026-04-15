@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-autobahn/Makefile
+Build-Depends: node/host
+
+Package: node-autobahn
+Submenu: Node.js
+Version: 26.3.1-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Web Application Messaging Protocol for Node.js
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: autobahn-26.3.1.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/autobahn
+Type: ipkg
+Description:  An implementation of The Web Application Messaging Protocol (WAMP)
+@@
+
+

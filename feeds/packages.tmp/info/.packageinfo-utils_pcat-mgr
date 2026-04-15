@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/utils/pcat-mgr/Makefile
+Build-Depends: golang/host
+
+Package: pcat-mgr
+Version: 2025.08.01~754b4f0b783a44d48d91e2dbd6c1dfca667a3049-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) @TARGET_rockchip_armv8 +fuse-utils
+Conflicts: pcat-manager
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: Photonicat Manager (Go Edition)
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: pcat-mgr-2025.08.01~754b4f0b783a44d48d91e2dbd6c1dfca667a3049.tar.zst
+License: GPL-3.0-or-later
+LicenseFiles: LICENSE
+URL: https://gitlab.com/CoiaPrant/pcat-mgr
+Type: ipkg
+Description: Photonicat Manager (Go Edition)
+@@
+
+

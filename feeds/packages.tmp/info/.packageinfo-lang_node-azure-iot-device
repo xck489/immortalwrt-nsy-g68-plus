@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/node-azure-iot-device/Makefile
+Build-Depends: node/host
+
+Package: node-azure-iot-device
+Submenu: Node.js
+Version: 1.18.4-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Azure IoT device SDK core
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: azure-iot-device-1.18.4.tgz
+License: MIT
+URL: https://www.npmjs.org/package/azure-iot-device
+Type: ipkg
+Description:  The core components of the Azure IoT device SDK.
+@@
+
+

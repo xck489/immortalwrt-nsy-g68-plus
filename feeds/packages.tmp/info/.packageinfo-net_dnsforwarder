@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/dnsforwarder/Makefile
+
+Package: dnsforwarder
+Version: 6.6.0-r1
+Depends: +libc +coreutils +coreutils-base64 +dnsmasq-full +libpthread +wget-ssl
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A simple DNS forwarder
+Maintainer: Dennis <openwrt@tossp.com>
+Source: dnsforwarder-6.6.0.tar.gz
+License: GPL-3.0
+LicenseFiles: LICENSE
+URL: https://github.com/holmium/dnsforwarder
+Type: ipkg
+Description:   Forwarding queries to customized domains (and their subdomains) to specified servers
+  over a specified protocol (UDP or TCP). non-standard ports are supported.
+@@
+
+

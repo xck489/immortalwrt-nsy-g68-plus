@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-bcrypt/Makefile
+Build-Depends: node/host
+
+Package: node-bcrypt
+Submenu: Node.js
+Version: 6.0.0-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A bcrypt library for NodeJS
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: bcrypt-6.0.0.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.com/package/bcrypt
+Type: ipkg
+Description:  A library to help you hash passwords. You can read about bcrypt in Wikipedia as well as in the following article: How To Safely Store A Password
+@@
+
+

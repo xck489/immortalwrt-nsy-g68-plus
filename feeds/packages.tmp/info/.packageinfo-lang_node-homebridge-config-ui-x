@@ -1,0 +1,32 @@
+Source-Makefile: feeds/packages/lang/node-homebridge-config-ui-x/Makefile
+Build-Depends: node/host node-clean-modules/host
+
+Package: node-homebridge-config-ui-x
+Submenu: Node.js
+Version: 5.21.0-r1
+Depends: +libc +node +node-homebridge +sudo +node-homebridge-node-pty-prebuilt-multiarch +node-bufferutil +node-utf-8-validate
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Homebridge Config UI X
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: homebridge-config-ui-x-5.21.0.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/homebridge-config-ui-x
+Type: ipkg
+Description:  Homebridge Config UI X is a web based management tool for Homebridge that allows you to manage all aspects of your Homebridge setup.
+
+ Run as root:
+    /etc/init.d/homebridge stop
+    /etc/init.d/homebridge disable
+    hb-service install --user homebridge -U /usr/share/homebridge --port 8581
+
+ *** The hb-service command is not full compatible with the openwrt environment. ***
+ *** The behavior in Homebridge servicemode is still unstable. ***
+@@
+
+

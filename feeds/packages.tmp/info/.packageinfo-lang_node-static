@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-static/Makefile
+Build-Depends: node/host
+
+Package: node-static
+Submenu: Node.js
+Version: 0.7.11-r4
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: simple, compliant file streaming module for node
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: node-static-0.7.11.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/node-static
+Type: ipkg
+Description:  node-static understands and supports conditional GET and HEAD requests. node-static was inspired by some of the other static-file serving modules out there, such as node-paperboy and antinode
+@@
+
+

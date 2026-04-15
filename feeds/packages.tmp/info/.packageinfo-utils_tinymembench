@@ -1,0 +1,20 @@
+Source-Makefile: feeds/packages/utils/tinymembench/Makefile
+
+Package: tinymembench
+Version: 0.4-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Simple benchmark for memory
+Maintainer: 
+Source: tinymembench-0.4.tar.zst
+URL: https://github.com/ssvb/tinymembench
+Type: ipkg
+Description:   Simple benchmark for memory throughput and latency.
+@@
+
+

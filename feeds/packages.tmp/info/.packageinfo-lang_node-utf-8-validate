@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-utf-8-validate/Makefile
+Build-Depends: node/host
+
+Package: node-utf-8-validate
+Submenu: Node.js
+Version: 6.0.6-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Check if a buffer contains valid UTF-8
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: utf-8-validate-6.0.6.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/utf-8-validate
+Type: ipkg
+Description:  Check if a buffer contains valid UTF-8 encoded text
+@@
+
+

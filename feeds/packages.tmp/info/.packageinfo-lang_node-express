@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-express/Makefile
+Build-Depends: node/host
+
+Package: node-express
+Submenu: Node.js
+Version: 5.2.1-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Fast, unopinionated, minimalist web framework
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: express-5.2.1.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/express
+Type: ipkg
+Description:  Fast, unopinionated, minimalist web framework
+@@
+
+

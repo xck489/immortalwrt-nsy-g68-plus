@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-noble-device/Makefile
+Build-Depends: node/host
+
+Package: node-noble-device
+Submenu: Node.js
+Version: 1.4.1-r2
+Depends: +libc +node +node-noble
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A Node.js lib to abstract BLE peripherals, using noble
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: noble-device-1.4.1.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/noble-device
+Type: ipkg
+Description:  A Node.js lib to abstract BLE (Bluetooth Low Energy) peripherals, using noble
+@@
+
+

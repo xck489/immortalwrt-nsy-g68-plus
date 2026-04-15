@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/subconverter/Makefile
+Build-Depends: jpcre2 rapidjson toml11
+
+Package: subconverter
+Version: 0.9.0~92f66bf5b58be5b3e605bb481db5f5ffd6b2aa78-r1
+Depends: +libc +libatomic +libcron +libcurl +libevent2 +libpcre2 +libquickjs +libstdcpp +libyaml-cpp
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: Utility to convert between various proxy subscription format
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: subconverter-0.9.0~92f66bf5b58be5b3e605bb481db5f5ffd6b2aa78.tar.zst
+License: GPL-3.0
+LicenseFiles: LICENSE
+URL: https://github.com/tindy2013/subconverter
+Type: ipkg
+Description: Utility to convert between various proxy subscription format
+@@
+
+

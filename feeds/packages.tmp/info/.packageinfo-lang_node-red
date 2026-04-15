@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-red/Makefile
+Build-Depends: node/host node-clean-modules/host
+
+Package: node-red
+Submenu: Node.js
+Version: 4.1.8-r1
+Depends: +libc +node +node-npm +node-bcrypt +node-bufferutil +node-utf-8-validate
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A visual tool for wiring the Internet of Things
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: node-red-4.1.8.tgz
+License: Apache-2.0
+LicenseFiles: LICENSE
+URL: https://nodered.org/
+Type: ipkg
+Description:  A visual tool for wiring the Internet of Things
+@@
+
+

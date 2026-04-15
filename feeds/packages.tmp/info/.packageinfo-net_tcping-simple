@@ -1,0 +1,21 @@
+Source-Makefile: feeds/packages/net/tcping-simple/Makefile
+
+Package: tcping-simple
+Version: 1.3.5-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: the operation is similar to ping but it does not use the ICMP protocol
+Maintainer: 
+Source: tcping-simple-1.3.5.tar.zst
+URL: https://github.com/MushrooM93/tcping
+Type: ipkg
+Description:   tcping support ipv4/ipv6 dual-stack in linux, the operation is similar
+  to ping but it does not use the ICMP protocol.
+@@
+
+

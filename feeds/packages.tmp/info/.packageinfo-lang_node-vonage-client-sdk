@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-vonage-client-sdk/Makefile
+Build-Depends: node/host
+
+Package: node-vonage-client-sdk
+Submenu: Node.js
+Version: 2.3.0-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Vonage Client SDK
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: vonage-client-sdk-2.3.0.tgz
+License: SEE_LICENSE_IN_LICENSE
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/@vonage/client-sdk
+Type: ipkg
+Description:  The Client SDK is intended to provide a ready solution for developers to build Programmable Conversation applications across multiple Channels including: Messages, Voice, SIP, websockets, and App.
+@@
+
+

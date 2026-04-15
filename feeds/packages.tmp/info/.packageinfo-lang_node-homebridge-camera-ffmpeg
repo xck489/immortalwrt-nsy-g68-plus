@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-homebridge-camera-ffmpeg/Makefile
+Build-Depends: node/host
+
+Package: node-homebridge-camera-ffmpeg
+Submenu: Node.js
+Version: 4.1.0-r1
+Depends: +libc +node +node-homebridge +node-ffmpeg-for-homebridge +node-mqtt
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Homebridge Camera FFmpeg
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: homebridge-camera-ffmpeg-4.1.0.tgz
+License: ISC Apache-2.0 License
+LicenseFiles: LICENSE
+URL: https://www.npmjs.com/package/homebridge-camera-ffmpeg
+Type: ipkg
+Description:  Homebridge Plugin Providing FFmpeg-based Camera Support
+@@
+
+

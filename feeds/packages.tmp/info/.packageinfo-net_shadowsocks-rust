@@ -1,0 +1,114 @@
+Source-Makefile: feeds/packages/net/shadowsocks-rust/Makefile
+Build-Depends: rust/host
+
+Package: shadowsocks-rust-sslocal
+Submenu: Web Servers/Proxies
+Version: 1.23.5-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @!i386
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: shadowsocks-rust sslocal
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: shadowsocks-rust-1.23.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://shadowsocks.org/
+Type: ipkg
+Description:     Shadowsocks is a fast tunnel proxy that helps you bypass firewalls.
+
+    This package contains the sslocal.
+@@
+
+Package: shadowsocks-rust-ssmanager
+Submenu: Web Servers/Proxies
+Version: 1.23.5-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @!i386
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: shadowsocks-rust ssmanager
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: shadowsocks-rust-1.23.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://shadowsocks.org/
+Type: ipkg
+Description:     Shadowsocks is a fast tunnel proxy that helps you bypass firewalls.
+
+    This package contains the ssmanager.
+@@
+
+Package: shadowsocks-rust-ssserver
+Submenu: Web Servers/Proxies
+Version: 1.23.5-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @!i386
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: shadowsocks-rust ssserver
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: shadowsocks-rust-1.23.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://shadowsocks.org/
+Type: ipkg
+Description:     Shadowsocks is a fast tunnel proxy that helps you bypass firewalls.
+
+    This package contains the ssserver.
+@@
+
+Package: shadowsocks-rust-ssurl
+Submenu: Web Servers/Proxies
+Version: 1.23.5-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @!i386
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: shadowsocks-rust ssurl
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: shadowsocks-rust-1.23.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://shadowsocks.org/
+Type: ipkg
+Description:     Shadowsocks is a fast tunnel proxy that helps you bypass firewalls.
+
+    This package contains the ssurl.
+@@
+
+Package: shadowsocks-rust-ssservice
+Submenu: Web Servers/Proxies
+Version: 1.23.5-r1
+Depends: +libc @(aarch64||arm||i386||loongarch64||mips||mips64||mips64el||mipsel||powerpc||powerpc64||riscv64||x86_64) @!i386
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: shadowsocks-rust ssservice
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: shadowsocks-rust-1.23.5.tar.gz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://shadowsocks.org/
+Type: ipkg
+Description:     Shadowsocks is a fast tunnel proxy that helps you bypass firewalls.
+
+    This package contains the ssservice.
+@@
+
+

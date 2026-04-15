@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-nconf/Makefile
+Build-Depends: node/host
+
+Package: node-nconf
+Submenu: Node.js
+Version: 0.13.0-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Hierarchical configuration for Node.js
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: nconf-0.13.0.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/nconf
+Type: ipkg
+Description:  Hierarchical node.js configuration with files, environment variables, command-line arguments, and atomic object merging
+@@
+
+

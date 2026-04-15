@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-jsonfile/Makefile
+Build-Depends: node/host
+
+Package: node-jsonfile
+Submenu: Node.js
+Version: 6.2.0-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Easily read/write JSON files
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: jsonfile-6.2.0.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/jsonfile
+Type: ipkg
+Description:  Easily read/write JSON files
+@@
+
+

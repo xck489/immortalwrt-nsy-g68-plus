@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/lang/node-hid/Makefile
+Build-Depends: node/host
+
+Package: node-hid
+Submenu: Node.js
+Version: 3.3.0-r1
+Depends: +libc +node +BUILD_NLS:libiconv-full +libusb-1.0 +libudev
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Access USB HID devices from node.js
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: node-hid-3.3.0.tgz
+License: MIT X11
+URL: https://www.npmjs.com/package/node-hid
+Type: ipkg
+Description:  Access USB HID devices from node.js
+@@
+
+

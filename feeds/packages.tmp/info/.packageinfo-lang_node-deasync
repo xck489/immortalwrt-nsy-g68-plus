@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-deasync/Makefile
+Build-Depends: node/host
+
+Package: node-deasync
+Submenu: Node.js
+Version: 0.1.31-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: DeAsync turns async function into sync
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: deasync-0.1.31.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.com/package/deasync
+Type: ipkg
+Description:  DeAsync turns async function into sync, implemented with a blocking mechanism by calling Node.js event loop at JavaScript layer. The core of deasync is writen in C++.
+@@
+
+

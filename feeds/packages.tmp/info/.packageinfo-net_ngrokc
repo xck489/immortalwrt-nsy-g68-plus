@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/ngrokc/Makefile
+
+Package: ngrokc
+Submenu: Web Servers/Proxies
+Version: 1.55-r3
+Depends: +libc +libpthread +libopenssl +libstdcpp +zlib +USE_GLIBC:libatomic
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Secure tunnels to localhost (C++ port)
+Maintainer: 
+Source: ngrokc-1.55.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/dosgo/ngrok-c
+Type: ipkg
+Description: Secure tunnels to localhost (C++ port)
+@@
+
+

@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/net/quectel-cm/Makefile
+
+Package: quectel-cm
+Submenu: WWAN
+Version: 1.6.5-r3
+Depends: +libc +kmod-usb-net-cdc-mbim +kmod-usb-net-qmi-wwan +kmod-usb-net-qmi-wwan-fibocom +kmod-usb-net-qmi-wwan-quectel +kmod-usb-serial-option
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Qconnector Manager for Quectel WWAN modules
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: quectel-cm-1.6.5.tar.gz
+License: Public Domain
+LicenseFiles: NOTICE
+Type: ipkg
+Description: Qconnector Manager for Quectel WWAN modules
+@@
+
+

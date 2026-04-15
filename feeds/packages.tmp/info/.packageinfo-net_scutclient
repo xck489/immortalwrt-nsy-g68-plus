@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/scutclient/Makefile
+
+Package: scutclient
+Submenu: Campus Network
+Version: 3.1.3-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: SCUT Dr.com client
+Maintainer: Scutclient Project
+Source: scutclient-3.1.3.tar.gz
+License: AGPL-3.0
+LicenseFiles: COPYING
+URL: https://github.com/scutclient/scutclient
+Type: ipkg
+Description:   Support SCUT private authentication protocol.
+@@
+
+

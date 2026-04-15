@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-homebridge-shelly-ds9/Makefile
+Build-Depends: node/host
+
+Package: node-homebridge-shelly-ds9
+Submenu: Node.js
+Version: 1.5.8-r1
+Depends: +libc +node +node-homebridge
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Homebridge plugin for Shelly
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: homebridge-shelly-ds9-1.5.8.tgz
+License: GPL-3.0
+LicenseFiles: LICENSE
+URL: https://www.npmjs.com/package/homebridge-shelly-ds9
+Type: ipkg
+Description:  Homebridge plugin for Shelly, enabling HomeKit support for the next generation of Shelly devices.
+@@
+
+

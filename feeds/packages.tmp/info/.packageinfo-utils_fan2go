@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/utils/fan2go/Makefile
+Build-Depends: golang/host
+
+Package: fan2go
+Version: 0.11.1-r2
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64) +libsensors
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Repository: base
+Title: dynamic fan speed control
+Maintainer: Dee.H.Y <dongfengweixiao@hotmail.com>
+Source: fan2go-0.11.1.tar.gz
+License: AGPL-3.0
+LicenseFiles: LICENSE
+URL: https://github.com/markusressel/fan2go
+Type: ipkg
+Description:   A simple daemon providing dynamic fan speed control based on
+  temperature sensors.
+@@
+
+

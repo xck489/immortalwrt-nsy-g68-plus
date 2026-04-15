@@ -1,0 +1,26 @@
+Source-Makefile: feeds/packages/lang/node-mocha/Makefile
+Build-Depends: node/host
+Build-Depends/host: node/host
+Build-Types: host
+
+Package: node-mocha
+Submenu: Node.js
+Version: 11.7.5-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: simple, flexible, fun test framework
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: mocha-11.7.5.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/mocha
+Type: ipkg
+Description:  Mocha is a simple, flexible, fun JavaScript test framework for node.js and the browser
+@@
+
+

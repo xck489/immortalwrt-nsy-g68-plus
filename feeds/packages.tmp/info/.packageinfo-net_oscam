@@ -1,0 +1,44 @@
+Source-Makefile: feeds/packages/net/oscam/Makefile
+
+Package: oscam
+Version: 2022.03.07~c5b2e655d2948a50bdc5a0db288b10f1955c3bd8-r1
+Depends: +libc +OSCAM_USE_LIBCRYPTO:libopenssl +OSCAM_USE_LIBUSB:libusb-1.0 +OSCAM_USE_PCSC:pcscd
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Open Source Conditional Access Modul
+Maintainer: Tomasz Maciej Nowak <tomek_n@o2.pl>
+Source: oscam-2022.03.07~c5b2e655d2948a50bdc5a0db288b10f1955c3bd8.tar.zst
+License: GPL-3.0
+LicenseFiles: COPYING
+URL: http://www.streamboard.tv/oscam
+Type: ipkg
+Description: Open Source Conditional Access Modul
+@@
+Config:
+	source "feeds/packages/net/oscam/Config.in"
+@@
+
+Package: list-smargo
+Version: 2022.03.07~c5b2e655d2948a50bdc5a0db288b10f1955c3bd8-r1
+Depends: +libc oscam @OSCAM_CARDREADER_SMARGO
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: List Smargo readers
+Maintainer: Tomasz Maciej Nowak <tomek_n@o2.pl>
+Source: oscam-2022.03.07~c5b2e655d2948a50bdc5a0db288b10f1955c3bd8.tar.zst
+License: GPL-3.0
+LicenseFiles: COPYING
+URL: http://www.streamboard.tv/oscam
+Type: ipkg
+Description: List Smargo readers
+@@
+
+

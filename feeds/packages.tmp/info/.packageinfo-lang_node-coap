@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-coap/Makefile
+Build-Depends: node/host
+
+Package: node-coap
+Submenu: Node.js
+Version: 1.5.0-r1
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: A CoAP library for node modelled after 'http'
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: coap-1.5.0.tgz
+License: MIT
+LicenseFiles: LICENSE.md
+URL: https://www.npmjs.org/package/coap
+Type: ipkg
+Description:  node-coap is a client and server library for CoAP modelled after the http module
+@@
+
+

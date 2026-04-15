@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-zeromq/Makefile
+Build-Depends: node/host node-gyp-build/host node-gyp/host
+
+Package: node-zeromq
+Submenu: Node.js
+Version: 6.0.8-r2
+Depends: +libc +node
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Next-generation ZeroMQ bindings for Node.js
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: zeromq-6.0.8.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.org/package/zeromq
+Type: ipkg
+Description:  Next-generation ZeroMQ bindings for Node.js
+@@
+
+

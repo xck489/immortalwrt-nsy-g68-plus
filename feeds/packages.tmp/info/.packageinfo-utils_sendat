@@ -1,0 +1,20 @@
+Source-Makefile: feeds/packages/utils/sendat/Makefile
+
+Package: sendat
+Submenu: WWAN
+Version: 2024.01.22~624c58f6331e5be3eac6d144ed985b4a4af94b10-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: Send AT commands to serial
+Maintainer: 
+Source: sendat-2024.01.22~624c58f6331e5be3eac6d144ed985b4a4af94b10.tar.zst
+Type: ipkg
+Description: Send AT commands to serial
+@@
+
+

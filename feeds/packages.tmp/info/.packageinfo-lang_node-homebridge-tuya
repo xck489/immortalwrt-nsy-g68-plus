@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-homebridge-tuya/Makefile
+Build-Depends: node/host
+
+Package: node-homebridge-tuya
+Submenu: Node.js
+Version: 3.1.1-r1
+Depends: +libc +node +node-homebridge
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Offical Homebridge plugin for TuyAPI
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: homebridge-tuya-3.1.1.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.com/package/homebridge-tuya
+Type: ipkg
+Description:  Homebridge-tuya is a homebridge plugin that lets you control your Tuya based devices with Homekit.
+@@
+
+

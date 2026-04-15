@@ -1,0 +1,24 @@
+Source-Makefile: feeds/packages/lang/node-homebridge-miot/Makefile
+Build-Depends: node/host
+
+Package: node-homebridge-miot
+Submenu: Node.js
+Version: 1.8.7-r1
+Depends: +libc +node +node-homebridge
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lang
+Category: Languages
+Repository: base
+Title: Homebridge plugin for devices supporting the miot
+Maintainer: Hirokazu MORIKAWA <morikw2@gmail.com>
+Source: homebridge-miot-1.8.7.tgz
+License: MIT
+LicenseFiles: LICENSE
+URL: https://www.npmjs.com/package/homebridge-miot
+Type: ipkg
+Description:  Homebridge plugin for devices supporting the miot protocol
+@@
+
+

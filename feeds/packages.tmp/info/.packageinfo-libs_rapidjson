@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/libs/rapidjson/Makefile
+
+Package: rapidjson
+Version: 2025.02.05~24b5e7a8b27f42fa16b96fc70aade9106cf7102f-r1
+Depends: +libc 
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: lib
+Category: Libraries
+Repository: base
+Title: rapidjson JSON parser/generator for C++
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: rapidjson-2025.02.05~24b5e7a8b27f42fa16b96fc70aade9106cf7102f.tar.zst
+License: BSD 3-Clause
+LicenseFiles: LICENSE
+URL: https://github.com/Tencent/rapidjson
+Type: ipkg
+Build-Only: 1
+Description:   A fast JSON parser/generator for C++ with both SAX/DOM style API
+@@
+
+

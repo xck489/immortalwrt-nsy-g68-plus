@@ -1,0 +1,22 @@
+Source-Makefile: feeds/packages/utils/phicomm-k3screenctrl/Makefile
+
+Package: phicomm-k3screenctrl
+Version: 2020.09.18~d8896cfad4bdf39f58999f9420807f986300bada-r3
+Depends: +libc @TARGET_bcm53xx_generic +@KERNEL_DEVMEM +@BUSYBOX_CONFIG_ARPING +bc +bash +curl +coreutils +coreutils-od +jq
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: utils
+Category: Utilities
+Title: LCD screen controller on PHICOMM K3
+Maintainer: Hamster Tian <haotia@gmail.com>
+Source: phicomm-k3screenctrl-2020.09.18~d8896cfad4bdf39f58999f9420807f986300bada.tar.zst
+License: GPL-2.0
+LicenseFiles: LICENSE
+URL: https://github.com/lwz322/k3screenctrl.git
+Type: ipkg
+Description:   K3 Screen Controller (k3screenctrl) is a program utilizing
+  the LCD screen on PHICOMM K3 to display some stats.
+@@
+
+

@@ -1,0 +1,23 @@
+Source-Makefile: feeds/packages/net/go-nats/Makefile
+Build-Depends: golang/host
+
+Package: go-nats
+Version: 0.0.1-r1
+Depends: +libc @(aarch64||arm||i386||i686||loongarch64||mips||mips64||mips64el||mipsel||riscv64||x86_64)
+Conflicts: 
+Menu-Depends: 
+Provides: 
+Section: net
+Category: Network
+Repository: base
+Title: A NAT type discovery tool
+Maintainer: Tianling Shen <cnsztl@immortalwrt.org>
+Source: go-nats-0.0.1.tar.zst
+License: MIT
+LicenseFiles: LICENSE
+URL: https://github.com/enobufs/go-nats
+Type: ipkg
+Description:   A NAT type discovery tool using STUN.
+@@
+
+
