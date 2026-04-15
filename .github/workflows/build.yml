@@ -21,8 +21,8 @@ jobs:
       - name: Maximize disk space
         uses: easimon/maximize-build-space@master
         with:
-          swap-size-mb: 4096
-          root-reserve-mb: 4096
+          swap-size-mb: 8192
+          root-reserve-mb: 8192
           
       - name: Install deps
         run: |
@@ -39,9 +39,9 @@ jobs:
           cd openwrt
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          make defconfig
-          make download -j8
-          make -j$(nproc) world
+          make defconfig || { cat /tmp/defconfig.log; exit 1; }
+          make download -j4
+          make -j2 world
           
       - uses: actions/upload-artifact@v4
         with:
