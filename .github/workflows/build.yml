@@ -1,10 +1,6 @@
 name: Build
 
 on:
-  push:
-    branches: [main]
-  schedule:
-    - cron: '0 2 * * 5'
   workflow_dispatch:
 
 env:
@@ -13,30 +9,19 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
-    timeout-hours: 8
-    
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        
-      - name: Maximize disk space
-        uses: easimon/maximize-build-space@master
-        with:
-          swap-size-mb: 2048
-          root-reserve-mb: 2048
-          
-      - name: Install packages
+      - uses: actions/checkout@v4
+      
+      - name: Install deps
         run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
           sudo apt-get update
           sudo apt-get install -y build-essential clang flex bison gperf texinfo libncurses-dev python3 libssl-dev gettext zlib1g-dev git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4
-          
-      - name: Clone
-        run: |
-          git clone $REPO_URL -b $REPO_BRANCH openwrt
-          
+      
       - name: Build
         run: |
+          git clone $REPO_URL -b $REPO_BRANCH openwrt
           cd openwrt
           cp ../configs/g68_mtk_wifi.config .config
           ./scripts/feeds update -a
@@ -44,10 +29,8 @@ jobs:
           make defconfig
           make download -j8
           make -j$(nproc) world
-          
-      - name: Upload firmware
-        uses: actions/upload-artifact@v4
+      
+      - uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: openwrt/bin/targets/rockchip/armv8/*.img.gz
-          retention-days: 7
