@@ -34,6 +34,7 @@ jobs:
       - name: Setup feeds
         run: |
           cd openwrt
+          rm -f feeds.conf.default
           cp $GITHUB_WORKSPACE/.feeds.conf feeds.conf.default
           ./scripts/feeds update -a
           ./scripts/feeds install -a
