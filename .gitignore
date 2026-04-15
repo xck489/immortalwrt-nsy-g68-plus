@@ -8,6 +8,9 @@ tmp/
 # 忽略日志
 *.log
 
-# 保留配置
-!.config
-!.feeds.conf
+# 忽略下载的源码包
+dl/
+
+# 忽略临时文件
+.config.old
+.config.local
