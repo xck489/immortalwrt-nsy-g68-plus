@@ -52,7 +52,7 @@ jobs:
       - name: Load custom configuration
         run: |
           cd openwrt
-          cp ${{ github.workspace }}/configs/g68_mtk_wifi.config .config
+          cp $GITHUB_WORKSPACE/configs/g68_mtk_wifi.config .config
           
       - name: Download packages
         run: |
