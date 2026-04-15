@@ -1,0 +1,13 @@
+# 忽略编译产物
+bin/
+build_*/
+staging_dir/
+build_dir/
+tmp/
+
+# 忽略日志
+*.log
+
+# 保留配置
+!.config
+!.feeds.conf
