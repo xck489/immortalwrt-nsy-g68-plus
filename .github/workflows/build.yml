@@ -26,55 +26,25 @@ jobs:
           
       - name: Install deps
         run: |
-          sudo apt-get update || true
-          sudo apt-get install -y build-essential flex bison gperf texinfo libncurses-dev python3 libncurses5-dev libssl-dev gettext zlib1g-dev file wget git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends build-essential flex bison gperf texinfo libncurses-dev python3 libssl-dev gettext zlib1g-dev git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4
           
       - name: Clone
         run: |
           git clone $REPO_URL -b $REPO_BRANCH openwrt
           
-      - name: Copy config
+      - name: Build
         run: |
           cp configs/g68_mtk_wifi.config openwrt/.config
-          ls -la openwrt/.config
-          
-      - name: Feeds update
-        run: |
           cd openwrt
-          ./scripts/feeds update -a 2>&1 | tee /tmp/feeds-update.log
-          cat /tmp/feeds-update.log | tail -20
-          
-      - name: Feeds install
-        run: |
-          cd openwrt
-          ./scripts/feeds install -a 2>&1 | tee /tmp/feeds-install.log
-          cat /tmp/feeds-install.log | tail -20
-          
-      - name: Make defconfig
-        run: |
-          cd openwrt
-          make defconfig 2>&1 | tee /tmp/defconfig.log
-          cat /tmp/defconfig.log | tail -30
-          
-      - name: Make download
-        run: |
-          cd openwrt
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+          make defconfig
           make download -j8
-          
-      - name: Make world
-        run: |
-          cd openwrt
           make -j$(nproc) world
           
       - uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: openwrt/bin/targets/rockchip/armv8/*.img.gz
-          retention-days: 7
-          
-      - uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: build-logs
-          path: /tmp/*.log
           retention-days: 7
