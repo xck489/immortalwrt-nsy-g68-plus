@@ -1,4 +1,4 @@
-name: Build ImmortalWrt
+name: Build
 
 on:
   push:
@@ -13,21 +13,23 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    timeout-minutes: 360
+    runs-on: ubuntu-22.04
+    timeout-hours: 8
+    
     steps:
-      - uses: actions/checkout@v4
-      
+      - name: Checkout
+        uses: actions/checkout@v4
+        
       - name: Maximize disk space
         uses: easimon/maximize-build-space@master
         with:
-          swap-size-mb: 8192
-          root-reserve-mb: 8192
+          swap-size-mb: 2048
+          root-reserve-mb: 2048
           
-      - name: Install deps
+      - name: Install packages
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends build-essential flex bison gperf texinfo libncurses-dev python3 libssl-dev gettext zlib1g-dev git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4
+          sudo apt-get install -y build-essential clang flex bison gperf texinfo libncurses-dev python3 libssl-dev gettext zlib1g-dev git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4
           
       - name: Clone
         run: |
@@ -35,15 +37,16 @@ jobs:
           
       - name: Build
         run: |
-          cp configs/g68_mtk_wifi.config openwrt/.config
           cd openwrt
+          cp ../configs/g68_mtk_wifi.config .config
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          make defconfig || { cat /tmp/defconfig.log; exit 1; }
-          make download -j4
-          make -j2 world
+          make defconfig
+          make download -j8
+          make -j$(nproc) world
           
-      - uses: actions/upload-artifact@v4
+      - name: Upload firmware
+        uses: actions/upload-artifact@v4
         with:
           name: firmware
           path: openwrt/bin/targets/rockchip/armv8/*.img.gz
