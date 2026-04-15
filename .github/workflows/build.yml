@@ -35,7 +35,15 @@ jobs:
         run: |
           cd openwrt
           rm -f feeds.conf.default
-          cp $GITHUB_WORKSPACE/.feeds.conf feeds.conf.default
+          cat > feeds.conf.default << 'FEEDS'
+src-git base https://github.com/immortalwrt/immortalwrt.git;openwrt-24.10
+src-git luci https://github.com/immortalwrt/luci.git;openwrt-24.10
+src-git routing https://github.com/openwrt/routing.git;openwrt-24.10
+src-git telephony https://github.com/openwrt/telephony.git;openwrt-24.10
+src-git packages https://github.com/immortalwrt/packages.git;openwrt-24.10
+src-git istore https://github.com/linkease/istore;main
+src-git netwizard https://github.com/sirpdboy/luci-app-netwizard;main
+FEEDS
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           
