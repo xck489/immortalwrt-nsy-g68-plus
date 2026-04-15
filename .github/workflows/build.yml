@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     
     steps:
       - name: Checkout
@@ -24,23 +24,21 @@ jobs:
         uses: easimon/maximize-build-space@master
         with:
           swap-size-mb: 2048
-          root-reserve-mb: 2560
+          root-reserve-mb: 2048
           remove-dotnet: true
           remove-android: true
           remove-haskell: true
-          remove-codeql: true
-          remove-docker-images: true
         
-      - name: Install dependencies
+      - name: Install basic dependencies
         run: |
           df -h
           sudo apt-get update
-          sudo apt-get install -y build-essential clang flex bison gperf texinfo libncurses-dev python3 libncurses5-dev python3-dev python3-setuptools libssl-dev gettext zlib1g-dev file wget git curl unzip gettext pkg-config gawk diffutils xz-utils bc automake cmake device-tree-compiler ccache libtool autoconf autogen m4 python3-pip
+          sudo apt-get install -y build-essential flex bison gperf texinfo libncurses-dev python3 libncurses5-dev libssl-dev gettext zlib1g-dev file wget git curl unzip gawk diffutils xz-utils bc automake cmake ccache libtool autoconf m4 python3-pip
           df -h
         
       - name: Clone source code
         run: |
-          git clone $REPO_URL -b $REPO_BRANCH openwrt
+          git clone --depth=1 $REPO_URL -b $REPO_BRANCH openwrt
           df -h
           
       - name: Install feeds
