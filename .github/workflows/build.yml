@@ -1,11 +1,11 @@
-name: Build
+name: nsy-g68-plus-build
 
 on:
   push:
     branches: [main]
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * 5'  # 每周五 16:00 UTC = 每周六 00:00 CST
+    - cron: '0 16 * * 5'
 
 env:
   REPO_URL: https://github.com/zhoufuli/immortalwrt-rk356x
@@ -17,13 +17,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       
-      - name: Install deps
+      - name: 安装编译依赖
         run: |
           sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc
           sudo apt-get update
           sudo apt-get install -y build-essential clang flex bison gperf texinfo libncurses-dev python3 libssl-dev gettext zlib1g-dev git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4 python3-pip python3-pyelftools
       
-      - name: Build
+      - name: 编译固件
         run: |
           git clone $REPO_URL -b $REPO_BRANCH openwrt
           cd openwrt
