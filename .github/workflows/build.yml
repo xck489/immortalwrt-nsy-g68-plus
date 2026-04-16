@@ -19,6 +19,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y build-essential clang flex bison gperf texinfo libncurses-dev python3 libssl-dev gettext zlib1g-dev git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4 python3-pip python3-pyelftools
       
+      - name: Load Custom Configuration
+        run: |
+          df -hT
+          chmod +x scripts/*.sh
+      
       - name: 编译固件
         run: |
           ./scripts/feeds update -a
