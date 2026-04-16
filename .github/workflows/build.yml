@@ -23,6 +23,7 @@ jobs:
         run: |
           df -hT
           chmod +x scripts/*.sh
+          cp .feeds.conf feeds.conf.default
       
       - name: 编译固件
         run: |
