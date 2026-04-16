@@ -38,3 +38,4 @@ jobs:
         with:
           name: firmware
           path: openwrt/bin/targets/rockchip/armv8/*.img.gz
+          retention-days: 7
