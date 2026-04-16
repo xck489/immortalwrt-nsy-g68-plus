@@ -4,6 +4,8 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: '0 16 * * 5'  # 每周五 16:00 UTC = 每周六 00:00 CST
 
 env:
   REPO_URL: https://github.com/zhoufuli/immortalwrt-rk356x
