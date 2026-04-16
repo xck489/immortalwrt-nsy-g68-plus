@@ -24,27 +24,17 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y --no-install-recommends build-essential libncurses-dev zlib1g-dev libssl-dev wget git curl unzip gettext pkg-config python3 python3-pip python3-pyelftools gawk diffutils xz-utils file bc bison flex automake cmake help2man ocaml sparse ccache rsync time device-tree-compiler
 
-      - name: Download official NSY-G68-PLUS defconfig
+      - name: Copy config
         run: |
           cd immortalwrt
-          curl -sL "https://raw.githubusercontent.com/zhoufuli/immortalwrt-rk356x/refs/heads/main/defconfig/g68-plus-docker.config" -o .config
-
-      - name: Increase ROOTFS to 2GB for Docker
-        run: |
-          cd immortalwrt
-          sed -i 's/CONFIG_TARGET_ROOTFS_PARTSIZE=512/CONFIG_TARGET_ROOTFS_PARTSIZE=2048/' .config
-          grep "CONFIG_TARGET_ROOTFS_PARTSIZE" .config
+          cp .config .config.backup
+          chmod +x scripts/*.sh
 
       - name: Update and install feeds
         run: |
           cd immortalwrt
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-
-      - name: Generate full config
-        run: |
-          cd immortalwrt
-          make defconfig
 
       - name: Build firmware
         run: |
@@ -57,7 +47,6 @@ jobs:
           if [ -d "bin/targets/rockchip/armv8" ]; then
             echo "Build successful!"
             ls -lh bin/targets/rockchip/armv8/*.img.gz 2>/dev/null || echo "No gz images"
-            ls -lh bin/targets/rockchip/armv8/*.img 2>/dev/null || echo "No raw images"
           else
             echo "Build failed"
             tail -100 build.log
