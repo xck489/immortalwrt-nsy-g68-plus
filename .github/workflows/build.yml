@@ -31,7 +31,7 @@ jobs:
           cp ../configs/g68_mtk_wifi.config .config
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          # make defconfig  # 已配置好，不需要再生成
+          yes "" | make oldconfig  # 补充新配置，不覆盖现有配置
           make download -j8
           make -j$(nproc) world
       
