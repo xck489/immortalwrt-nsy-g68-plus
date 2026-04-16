@@ -28,7 +28,5 @@ if [ -z "$opkg_mirror" ]; then
 fi
 
 sed -i.bak "s,https://downloads.immortalwrt.org,$opkg_mirror,g" "/etc/opkg/distfeeds.conf"
-sed -i '/OPENWRT_RELEASE/d' /usr/lib/os-release
-echo "OPENWRT_RELEASE='ImmortalWrt 24.10 by:xiaozhou'" >> /usr/lib/os-release
 
 exit 0
