@@ -7,10 +7,6 @@ on:
   schedule:
     - cron: '0 16 * * 5'
 
-env:
-  REPO_URL: https://github.com/zhoufuli/immortalwrt-rk356x
-  REPO_BRANCH: main
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -25,18 +21,14 @@ jobs:
       
       - name: 编译固件
         run: |
-          git clone $REPO_URL -b $REPO_BRANCH openwrt
-          cd openwrt
-          # ✅ 正确路径
-          cp ../configs/g68_mtk_wifi.config .config
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-          yes "" | make oldconfig  # 补充新配置，不覆盖现有配置
+          make defconfig
           make download -j8
           make -j$(nproc) world
       
       - uses: actions/upload-artifact@v4
         with:
           name: firmware
-          path: openwrt/bin/targets/rockchip/armv8/*.img.gz
+          path: bin/targets/rockchip/armv8/*.img.gz
           retention-days: 7
