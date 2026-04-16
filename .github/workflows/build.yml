@@ -26,7 +26,6 @@ jobs:
       
       - name: 编译固件
         run: |
-          ./scripts/feeds update -a
           ./scripts/feeds install -a
           make download -j8
           make -j1 world
