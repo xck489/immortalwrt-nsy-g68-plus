@@ -27,7 +27,7 @@ jobs:
         run: |
           git clone $REPO_URL -b $REPO_BRANCH openwrt
           cd openwrt
-          cp ../.config .config
+          cp configs/g68_mtk_wifi.config .config
           ./scripts/feeds update -a
           ./scripts/feeds install -a
           make defconfig
