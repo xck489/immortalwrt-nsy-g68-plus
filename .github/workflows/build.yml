@@ -10,7 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 360
     steps:
       - name: 克隆源码
         uses: actions/checkout@v4
