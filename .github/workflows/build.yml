@@ -45,8 +45,13 @@ jobs:
           sed -i "/CONFIG_RUST_SCCACHE/d" .config
           echo "# CONFIG_PACKAGE_rust is not set" >> .config
 
+          # 强制写入 LuCI 配置
+          echo "=== 强制写入 LuCI 配置 ==="
+          sed -i "/CONFIG_PACKAGE_luci=/d" .config
+          echo "CONFIG_PACKAGE_luci=y" >> .config
+
           # 强制写入 istore 配置
-          echo "=== 修复 istore 配置 ==="
+          echo "=== 强制写入 istore 配置 ==="
           sed -i "/CONFIG_PACKAGE_luci-app-store=/d" .config
           echo "CONFIG_PACKAGE_luci-app-store=y" >> .config
 
