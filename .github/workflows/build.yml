@@ -30,6 +30,10 @@ jobs:
           # 进入源码目录（仓库2本身就是源码）
           cd $REPO_ROOT/openwrt
 
+          # 更新并安装 feeds
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+
           # 复制配置并生成完整配置
           cp $REPO_ROOT/openwrt/configs/nsy_g68-plus.config .config
           echo "=== 使用的配置文件 ==="
