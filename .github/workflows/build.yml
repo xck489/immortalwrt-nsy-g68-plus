@@ -11,10 +11,12 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout source
+        uses: actions/checkout@v4
         with:
           path: immortalwrt
           fetch-depth: 1
+          submodules: true
 
       - name: Install deps
         run: |
@@ -22,16 +24,26 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends build-essential flex bison gperf texinfo libncurses-dev python3 libssl-dev gettext zlib1g-dev git curl unzip gawk diffutils xz-utils bc automake ccache libtool m4 python3-pip python3-pyelftools
 
-      - name: Prepare config and feeds
+      - name: Prepare feeds
         run: |
           cd immortalwrt
-          chmod +x .github/scripts/*.sh
-          .github/scripts/prepare.sh
+          cp .feeds.conf feeds.conf.default
+
+      - name: Update and install feeds
+        run: |
+          cd immortalwrt
+          ./scripts/feeds update -a
+          ./scripts/feeds install -a
+
+      - name: Download
+        run: |
+          cd immortalwrt
+          make download -j8
 
       - name: Build
         run: |
           cd immortalwrt
-          .github/scripts/build.sh
+          make -j$(nproc) world
 
       - uses: actions/upload-artifact@v4
         if: success()
