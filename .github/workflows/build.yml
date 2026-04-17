@@ -27,15 +27,15 @@ jobs:
           REPO_ROOT=$PWD
           echo "Repo root: $REPO_ROOT"
 
-          # 进入源码目录
+          # 进入源码目录（仓库2本身就是源码）
           cd $REPO_ROOT/openwrt
-
-          # 更新 feeds（istore 已在 feeds.conf.default 中）
-          ./scripts/feeds update -a
-          ./scripts/feeds install -a
 
           # 复制配置并生成完整配置
           cp $REPO_ROOT/openwrt/configs/nsy_g68-plus.config .config
+          echo "=== 使用的配置文件 ==="
+          echo "源配置: $REPO_ROOT/openwrt/configs/nsy_g68-plus.config"
+          ls -la $REPO_ROOT/openwrt/configs/
+          echo "SHA256: $(sha256sum $REPO_ROOT/openwrt/configs/nsy_g68-plus.config | cut -c1-64)"
           make defconfig
           make oldconfig MAKEFLAGS=-y
 
@@ -56,7 +56,7 @@ jobs:
           grep -F "CONFIG_PACKAGE_luci=y" .config && echo "✅ LuCI 已配置" || echo "⚠️ LuCI 未配置"
 
           make download -j8
-          make -j$(nproc) world
+          make -j1 world
 
       - uses: actions/upload-artifact@v4
         with:
