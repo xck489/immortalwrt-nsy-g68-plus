@@ -20,6 +20,7 @@ jobs:
             .feeds.conf
             configs
             feeds
+            scripts
           sparse-checkout-cone-mode: false
 
       - name: 安装依赖
