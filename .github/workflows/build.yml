@@ -25,25 +25,13 @@ jobs:
       - name: Prepare config and feeds
         run: |
           cd immortalwrt
-          cp .feeds.conf feeds.conf.default
-          cp .config .config.backup
-          chmod +x scripts/*.sh
-
-      - name: Update and install feeds
-        run: |
-          cd immortalwrt
-          ./scripts/feeds update -a
-          ./scripts/feeds install -a
-
-      - name: Download
-        run: |
-          cd immortalwrt
-          make download -j8
+          chmod +x .github/scripts/*.sh
+          .github/scripts/prepare.sh
 
       - name: Build
         run: |
           cd immortalwrt
-          make -j$(nproc) world
+          .github/scripts/build.sh
 
       - uses: actions/upload-artifact@v4
         if: success()
